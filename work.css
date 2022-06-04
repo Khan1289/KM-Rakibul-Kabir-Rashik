@@ -221,7 +221,6 @@
     background: linear-gradient(to right,#00ccff,#d400d4);
     animation: line1 2s linear infinite;
     animation-delay: 1s;
-    z-index:;
   }
   @keyframes line1 {
     0%{
