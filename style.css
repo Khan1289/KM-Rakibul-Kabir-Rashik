@@ -143,17 +143,42 @@ body{
 
   }
   .hero-contact{
-      width: 20vh;
-      height: 5vh;
-      font-size: 23px;
+      width: 30vh;
+      height: 10vh;
       position: absolute;
-      bottom: 23%;
+      bottom: 7%;
       left:18%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .btn{
+    text-decoration: none;
+    padding: 20px 50px;
+    font-size: 1.2rem;
+    position: relative;
+    color: black;
+  }
+  .btn::after,.btn::before{
+    border: 3px solid black;
+    content: "";
+    position: absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    bottom: 0;
+    transition: transform .3s ease;
+  }
+  .btn:hover::after{
+    transform: translate(-5px,-5px);
+  }
+  .btn:hover::before{
+    transform: translate(5px,5px);
   }
   .work{
       height: 140vh;
       width: 100%;
-      background-color:rgba(53, 43, 43, 0.671);
+      background-color:#0e1538;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -165,34 +190,33 @@ body{
   }
   .first{
     position: absolute;
-    top: 100px;
+    top: 130px;
     left: 10%;
 }
   .pic2 img{
       height: 60vh;
       width: 30%;
       position: absolute;
-      top: 100px;
+      top: 130px;
       right: 10%;
   }
   .second{
     position: absolute;
-    bottom:20px;
+    bottom:60px;
     right: 10%;
   }
   .pic3 img{
       height: 60vh;
       width: 30%;
       position: absolute;
-      bottom: 20px;
+      bottom: 60px;
       left: 10%;
 
   }
   .column2{
     width: 49.5%;
     height: 60vh;
-    background-color:rgb(139, 165, 194);
-    color: black;
+    color: white;
   }
   .work-subheading h3{
       font-size: 25px;
@@ -202,13 +226,99 @@ body{
       font-size: 14px;
       margin-bottom: 10px;
   }
-  .work-contact{
-    width: 14vh;
-    height: 3vh;
-    font-size: 14px;
+  .work-contact a{
     position: absolute;
-    bottom: 23%;
-    left:18%;
+    bottom:0;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: aliceblue;
+    padding: 30px 60px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 20px 50px rgba(0,0,0, .5); 
+    overflow: hidden;
+  }
+  .work-contact a::before{
+    content: "";
+    position:absolute;
+    top:2px;
+    left:2px;
+    bottom:2px;
+    width: 50%;
+    background:rgba(255,255,255,0.05);
+  }
+  .work-contact a span:nth-child(1){
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right,#00ccff,#d400d4);
+    animation: line1 2s linear infinite;
+    animation-delay: 1s;
+  }
+  @keyframes line1 {
+    0%{
+      transform: translateX(-100%);
+    }
+    100%{
+      transform: translateX(100%);
+    }
+  }
+  .work-contact a span:nth-child(2){
+    position: absolute;
+    top:0;
+    right:0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom,#00ccff,#d400d4);
+    animation: line2 2s linear infinite;
+    animation-delay: 1s;
+  }
+  @keyframes line2 {
+    0%{
+      transform: translateY(-100%);
+    }
+    100%{
+      transform: translateY(100%);
+    }
+  }
+  .work-contact a span:nth-child(3){
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left,#00ccff,#d400d4);
+    animation: line3 2s linear infinite;
+    animation-delay: 1s;
+  }
+  @keyframes line3 {
+    0%{
+      transform: translateX(100%);
+    }
+    100%{
+      transform: translateX(-100%);
+    }
+  }
+  .work-contact a span:nth-child(4){
+    position: absolute;
+    top:0;
+    left:0;
+    width: 2px;
+    height:100%;
+    background: linear-gradient(to top,#00ccff,#d400d4);
+    animation: line4 2s linear infinite;
+    animation-delay: 1s;
+  }
+  @keyframes line4 {
+    0%{
+      transform: translateY(100%);
+    }
+    100%{
+      transform: translateY(-100%);
+    }
   }
 .first h3{
     margin-top: -60px;
@@ -223,17 +333,16 @@ body{
     position: relative;
 }
 .dp img{
-    width: 43%;
+    width: 30%;
     height: 78vh;
     position: absolute;
     top:0;
-    right:50px;
+    right:10%;
 }
 .column3{
     width: 50.4%;
     height: 78vh;
-    background-color:white;
-    color: black;
+    color:white;
     position: absolute;
     left:50px;
 }
@@ -255,12 +364,80 @@ body{
 
 }
 .about-page{
-    width: 20vh;
-    height: 5vh;
     font-size: 23px;
     position: absolute;
-    bottom: 23%;
+    bottom: 15%;
     left:18%;
+}
+.about-page a span{
+  position: relative;
+  z-index: 100;
+}
+.about-page a{
+  position: relative;
+  padding: 15px 30px;
+  border: 2px solid #0f0;
+  margin: 40px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: white;
+  -webkit-box-reflect: below 0px linear-gradient(transparent,#0002);
+  transition: 0.5s;
+}
+.about-page a:hover{
+  color:black;
+  box-shadow: 0 0 10px #0f0,
+              0 0 20px #0f0,
+              0 0 80px #0f0,
+              0 0 160px #0f0;
+}
+.about-page a::before{
+  content: "";
+  position: absolute;
+  left: -20px;
+  top:50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: #0f0;
+  box-shadow: 5px -8px 0 #0f0,
+              5px 8px 0 #0f0;
+ transition: width 0.5s,left 0.5s,height 0.5s,box-shadow 0.5s;
+ transition-delay: 1s,0.5s,0s,0s;
+
+}
+.about-page a:hover::before{
+  width: 60%;
+  height: 100%;
+  left:-2px;
+  box-shadow: 5px 0px 0 #0f0,
+              5px 0px 0 #0f0;
+ transition-delay: 0s ,0s ,0.5s,1s;
+}
+.about-page a::after{
+  content: "";
+  position: absolute;
+  right: -20px;
+  top:50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: #0f0;
+  box-shadow: -5px -8px 0 #0f0,
+              -5px 8px 0 #0f0;
+ transition: width 0.5s,left 0.5s,height 0.5s,box-shadow 0.5s;
+ transition-delay: 1s,0.5s,0s,0s;
+
+}
+.about-page a:hover::after{
+  width: 60%;
+  height: 100%;
+  right:-2px;
+  box-shadow: -5px 0px 0 #0f0,
+              -5px 0px 0 #0f0;
+ transition-delay: 0s ,0s ,0.5s,1s;
 }
 .name :nth-child(1){
     color: blue;
@@ -272,7 +449,7 @@ body{
     color: red;
 }
 footer{
-    margin-top: 100px;
+    margin-top: 200px;
     position:relative;
     width: 100%;
     background-color: blue;
