@@ -488,8 +488,83 @@ body{
 .name :nth-child(3){
     color: red;
 }
+.row-4{
+  background-color: #1a2455;
+  padding-bottom: 100px;
+}
+
+.container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
+  padding: 20px 100px;
+}
+.content{
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: antiquewhite;
+
+}
+.left{
+  height: 100%;
+  background: url(Image/pic9.jpg) no-repeat center;
+  background-size: cover;
+}
+.right{
+  padding: 25px 40px;
+
+}
+.field{
+  width: 100%;
+  padding: .2rem 1rem;
+  outline: none;
+  border: 2px solid rgba(0,0,0,.3);
+  background-color: rgba(230, 230, 230, 0.6);
+  margin-bottom: 35px;
+  font-size: 1.1rem;
+  transition: .3s;
+}
+.field:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+.field:focus{
+  background-color: white;
+  border: 2px solid rgba(30,85,250,.47);
+}
+.area{
+  min-height: 150px;
+}
+.btn{
+text-decoration: none;
+padding: 20px 50px;
+font-size: 1.2rem;
+position: relative;
+color: black;
+}
+.btn::after,.btn::before{
+border: 3px solid rgba(0,0,0,.3);
+content: "";
+position: absolute;
+width:100%;
+height:100%;
+left:0;
+bottom: 0;
+transition: transform .3s ease;
+}
+.btn:hover::after{
+transform: translate(-5px,-5px);
+}
+.btn:hover::before{
+transform: translate(5px,5px);
+}
 footer{
-    margin-top: 200px;
     position:relative;
     width: 100%;
     background-color: blue;
